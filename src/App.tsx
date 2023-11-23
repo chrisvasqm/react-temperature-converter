@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [temperature, setTemperature] = useState(0);
+  const [convertion, setConversion] = useState('fahrenheit');
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -10,7 +11,16 @@ function App() {
   }
 
   function handleTemperatureChange(event: any) {
-    setTemperature(parseInt(event.target.value));
+    const value = event.target.value;
+
+    if (!value)
+      return;
+
+    setTemperature(parseInt(event.target.value, 10));
+  }
+
+  function handleConversionChange(event: any) {
+    setConversion(event.target.value);
   }
 
   return (
@@ -25,7 +35,7 @@ function App() {
           value={temperature}
         />
 
-        <select className='dropdown' defaultValue="celsius">
+        <select className='dropdown' defaultValue={convertion} onChange={handleConversionChange}>
           <option value="fahrenheit">Celsius to Fahrenheit</option>
           <option value="celsius">Fahrenheit to Celsius</option>
         </select>
