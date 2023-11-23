@@ -71,3 +71,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dropdown {
+  margin-right: 8px;
+}
+
+.temperature {
+  margin-right: 8px;
+}

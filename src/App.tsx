@@ -13,8 +13,8 @@ function App() {
       <form className='form' onSubmit={handleSubmit}>
         <input className='temperature' type='number' />
         <select className='dropdown' defaultValue="celsius">
-          <option value="celsius">Celsius</option>
-          <option value="fahrenheit">Fahrenheit</option>
+          <option value="fahrenheit">Celsius to Fahrenheit</option>
+          <option value="celsius">Fahrenheit to Celsius</option>
         </select>
         <button className='button'>Convert</button>
       </form>
