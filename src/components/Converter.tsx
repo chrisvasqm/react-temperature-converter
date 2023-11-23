@@ -5,8 +5,8 @@ function Converter() {
     const [convertion, setConversion] = useState('fahrenheit');
     const [result, setResult] = useState(undefined);
 
-    function handleSubmit(e: any) {
-        e.preventDefault();
+    function handleSubmit(event: any) {
+        event.preventDefault();
 
         if (convertion === 'fahrenheit')
             setResult(celsiusToFahrenheit(temperature).toFixed(2));
@@ -19,7 +19,6 @@ function Converter() {
 
         if (!value || isNaN(parseInt(value, 10)))
             return;
-
 
         setTemperature(parseInt(event.target.value, 10));
     }
